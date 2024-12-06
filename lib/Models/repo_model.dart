@@ -1,173 +1,174 @@
 import 'dart:convert';
 
 class RepoModel {
-    int id;
-    String nodeId;
-    String name;
-    String fullName;
-    bool private;
-    Owner owner;
-    String htmlUrl;
-    dynamic description;
-    bool fork;
-    String url;
-    String forksUrl;
-    String keysUrl;
-    String collaboratorsUrl;
-    String teamsUrl;
-    String hooksUrl;
-    String issueEventsUrl;
-    String eventsUrl;
-    String assigneesUrl;
-    String branchesUrl;
-    String tagsUrl;
-    String blobsUrl;
-    String gitTagsUrl;
-    String gitRefsUrl;
-    String treesUrl;
-    String statusesUrl;
-    String languagesUrl;
-    String stargazersUrl;
-    String contributorsUrl;
-    String subscribersUrl;
-    String subscriptionUrl;
-    String commitsUrl;
-    String gitCommitsUrl;
-    String commentsUrl;
-    String issueCommentUrl;
-    String contentsUrl;
-    String compareUrl;
-    String mergesUrl;
-    String archiveUrl;
-    String downloadsUrl;
-    String issuesUrl;
-    String pullsUrl;
-    String milestonesUrl;
-    String notificationsUrl;
-    String labelsUrl;
-    String releasesUrl;
-    String deploymentsUrl;
-    DateTime createdAt;
-    DateTime updatedAt;
-    DateTime pushedAt;
-    String gitUrl;
-    String sshUrl;
-    String cloneUrl;
-    String svnUrl;
-    dynamic homepage;
-    int size;
-    int stargazersCount;
-    int watchersCount;
-    Language language;
-    bool hasIssues;
-    bool hasProjects;
-    bool hasDownloads;
-    bool hasWiki;
-    bool hasPages;
-    bool hasDiscussions;
-    int forksCount;
-    dynamic mirrorUrl;
-    bool archived;
-    bool disabled;
-    int openIssuesCount;
-    dynamic license;
-    bool allowForking;
-    bool isTemplate;
-    bool webCommitSignoffRequired;
-    List<dynamic> topics;
-    Visibility visibility;
-    int forks;
-    int openIssues;
-    int watchers;
-    DefaultBranch defaultBranch;
+  int id;
+  String nodeId;
+  String name;
+  String fullName;
+  bool private;
+  Owner owner;
+  String htmlUrl;
+  dynamic description;
+  bool fork;
+  String url;
+  String forksUrl;
+  String keysUrl;
+  String collaboratorsUrl;
+  String teamsUrl;
+  String hooksUrl;
+  String issueEventsUrl;
+  String eventsUrl;
+  String assigneesUrl;
+  String branchesUrl;
+  String tagsUrl;
+  String blobsUrl;
+  String gitTagsUrl;
+  String gitRefsUrl;
+  String treesUrl;
+  String statusesUrl;
+  String languagesUrl;
+  String stargazersUrl;
+  String contributorsUrl;
+  String subscribersUrl;
+  String subscriptionUrl;
+  String commitsUrl;
+  String gitCommitsUrl;
+  String commentsUrl;
+  String issueCommentUrl;
+  String contentsUrl;
+  String compareUrl;
+  String mergesUrl;
+  String archiveUrl;
+  String downloadsUrl;
+  String issuesUrl;
+  String pullsUrl;
+  String milestonesUrl;
+  String notificationsUrl;
+  String labelsUrl;
+  String releasesUrl;
+  String deploymentsUrl;
+  DateTime createdAt;
+  DateTime updatedAt;
+  DateTime pushedAt;
+  String gitUrl;
+  String sshUrl;
+  String cloneUrl;
+  String svnUrl;
+  dynamic homepage;
+  int size;
+  int stargazersCount;
+  int watchersCount;
+  Language? language;
+  bool hasIssues;
+  bool hasProjects;
+  bool hasDownloads;
+  bool hasWiki;
+  bool hasPages;
+  bool hasDiscussions;
+  int forksCount;
+  dynamic mirrorUrl;
+  bool archived;
+  bool disabled;
+  int openIssuesCount;
+  dynamic license;
+  bool allowForking;
+  bool isTemplate;
+  bool webCommitSignoffRequired;
+  List<dynamic> topics;
+  Visibility visibility;
+  int forks;
+  int openIssues;
+  int watchers;
+  DefaultBranch? defaultBranch;
 
-    RepoModel({
-        required this.id,
-        required this.nodeId,
-        required this.name,
-        required this.fullName,
-        required this.private,
-        required this.owner,
-        required this.htmlUrl,
-        required this.description,
-        required this.fork,
-        required this.url,
-        required this.forksUrl,
-        required this.keysUrl,
-        required this.collaboratorsUrl,
-        required this.teamsUrl,
-        required this.hooksUrl,
-        required this.issueEventsUrl,
-        required this.eventsUrl,
-        required this.assigneesUrl,
-        required this.branchesUrl,
-        required this.tagsUrl,
-        required this.blobsUrl,
-        required this.gitTagsUrl,
-        required this.gitRefsUrl,
-        required this.treesUrl,
-        required this.statusesUrl,
-        required this.languagesUrl,
-        required this.stargazersUrl,
-        required this.contributorsUrl,
-        required this.subscribersUrl,
-        required this.subscriptionUrl,
-        required this.commitsUrl,
-        required this.gitCommitsUrl,
-        required this.commentsUrl,
-        required this.issueCommentUrl,
-        required this.contentsUrl,
-        required this.compareUrl,
-        required this.mergesUrl,
-        required this.archiveUrl,
-        required this.downloadsUrl,
-        required this.issuesUrl,
-        required this.pullsUrl,
-        required this.milestonesUrl,
-        required this.notificationsUrl,
-        required this.labelsUrl,
-        required this.releasesUrl,
-        required this.deploymentsUrl,
-        required this.createdAt,
-        required this.updatedAt,
-        required this.pushedAt,
-        required this.gitUrl,
-        required this.sshUrl,
-        required this.cloneUrl,
-        required this.svnUrl,
-        required this.homepage,
-        required this.size,
-        required this.stargazersCount,
-        required this.watchersCount,
-        required this.language,
-        required this.hasIssues,
-        required this.hasProjects,
-        required this.hasDownloads,
-        required this.hasWiki,
-        required this.hasPages,
-        required this.hasDiscussions,
-        required this.forksCount,
-        required this.mirrorUrl,
-        required this.archived,
-        required this.disabled,
-        required this.openIssuesCount,
-        required this.license,
-        required this.allowForking,
-        required this.isTemplate,
-        required this.webCommitSignoffRequired,
-        required this.topics,
-        required this.visibility,
-        required this.forks,
-        required this.openIssues,
-        required this.watchers,
-        required this.defaultBranch,
-    });
+  RepoModel({
+    required this.id,
+    required this.nodeId,
+    required this.name,
+    required this.fullName,
+    required this.private,
+    required this.owner,
+    required this.htmlUrl,
+    required this.description,
+    required this.fork,
+    required this.url,
+    required this.forksUrl,
+    required this.keysUrl,
+    required this.collaboratorsUrl,
+    required this.teamsUrl,
+    required this.hooksUrl,
+    required this.issueEventsUrl,
+    required this.eventsUrl,
+    required this.assigneesUrl,
+    required this.branchesUrl,
+    required this.tagsUrl,
+    required this.blobsUrl,
+    required this.gitTagsUrl,
+    required this.gitRefsUrl,
+    required this.treesUrl,
+    required this.statusesUrl,
+    required this.languagesUrl,
+    required this.stargazersUrl,
+    required this.contributorsUrl,
+    required this.subscribersUrl,
+    required this.subscriptionUrl,
+    required this.commitsUrl,
+    required this.gitCommitsUrl,
+    required this.commentsUrl,
+    required this.issueCommentUrl,
+    required this.contentsUrl,
+    required this.compareUrl,
+    required this.mergesUrl,
+    required this.archiveUrl,
+    required this.downloadsUrl,
+    required this.issuesUrl,
+    required this.pullsUrl,
+    required this.milestonesUrl,
+    required this.notificationsUrl,
+    required this.labelsUrl,
+    required this.releasesUrl,
+    required this.deploymentsUrl,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.pushedAt,
+    required this.gitUrl,
+    required this.sshUrl,
+    required this.cloneUrl,
+    required this.svnUrl,
+    required this.homepage,
+    required this.size,
+    required this.stargazersCount,
+    required this.watchersCount,
+    required this.language,
+    required this.hasIssues,
+    required this.hasProjects,
+    required this.hasDownloads,
+    required this.hasWiki,
+    required this.hasPages,
+    required this.hasDiscussions,
+    required this.forksCount,
+    required this.mirrorUrl,
+    required this.archived,
+    required this.disabled,
+    required this.openIssuesCount,
+    required this.license,
+    required this.allowForking,
+    required this.isTemplate,
+    required this.webCommitSignoffRequired,
+    required this.topics,
+    required this.visibility,
+    required this.forks,
+    required this.openIssues,
+    required this.watchers,
+    required this.defaultBranch,
+  });
 
-    factory RepoModel.fromRawJson(String str) => RepoModel.fromJson(json.decode(str));
+  factory RepoModel.fromRawJson(String str) =>
+      RepoModel.fromJson(json.decode(str));
 
-    String toRawJson() => json.encode(toJson());
+  String toRawJson() => json.encode(toJson());
 
-    factory RepoModel.fromJson(Map<String, dynamic> json) => RepoModel(
+  factory RepoModel.fromJson(Map<String, dynamic> json) => RepoModel(
         id: json["id"],
         nodeId: json["node_id"],
         name: json["name"],
@@ -225,7 +226,7 @@ class RepoModel {
         size: json["size"],
         stargazersCount: json["stargazers_count"],
         watchersCount: json["watchers_count"],
-        language: languageValues.map[json["language"]]!,
+        language: languageValues.map[json["language"]],
         hasIssues: json["has_issues"],
         hasProjects: json["has_projects"],
         hasDownloads: json["has_downloads"],
@@ -246,10 +247,10 @@ class RepoModel {
         forks: json["forks"],
         openIssues: json["open_issues"],
         watchers: json["watchers"],
-        defaultBranch: defaultBranchValues.map[json["default_branch"]]!,
-    );
+        defaultBranch: defaultBranchValues.map[json["default_branch"]],
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "id": id,
         "node_id": nodeId,
         "name": name,
@@ -329,101 +330,89 @@ class RepoModel {
         "open_issues": openIssues,
         "watchers": watchers,
         "default_branch": defaultBranchValues.reverse[defaultBranch],
-    };
+      };
 }
 
-enum DefaultBranch {
-    MAIN,
-    MASTER
-}
+enum DefaultBranch { MAIN, MASTER }
 
-final defaultBranchValues = EnumValues({
-    "main": DefaultBranch.MAIN,
-    "master": DefaultBranch.MASTER
-});
+final defaultBranchValues =
+    EnumValues({"main": DefaultBranch.MAIN, "master": DefaultBranch.MASTER});
 
-enum Language {
-    C,
-    DART,
-    LANGUAGE_C
-}
+enum Language { C, DART, LANGUAGE_C }
 
-final languageValues = EnumValues({
-    "C++": Language.C,
-    "Dart": Language.DART,
-    "C": Language.LANGUAGE_C
-});
+final languageValues = EnumValues(
+    {"C++": Language.C, "Dart": Language.DART, "C": Language.LANGUAGE_C});
 
 class Owner {
-    Login login;
-    int id;
-    NodeId nodeId;
-    String avatarUrl;
-    String gravatarId;
-    String url;
-    String htmlUrl;
-    String followersUrl;
-    String followingUrl;
-    GistsUrl gistsUrl;
-    String starredUrl;
-    String subscriptionsUrl;
-    String organizationsUrl;
-    String reposUrl;
-    EventsUrl eventsUrl;
-    String receivedEventsUrl;
-    Type type;
-    Visibility userViewType;
-    bool siteAdmin;
+  Login? login;
+  int id;
+  NodeId? nodeId;
+  String avatarUrl;
+  String gravatarId;
+  String url;
+  String htmlUrl;
+  String followersUrl;
+  String followingUrl;
+  GistsUrl? gistsUrl;
+  String starredUrl;
+  String subscriptionsUrl;
+  String organizationsUrl;
+  String reposUrl;
+  EventsUrl? eventsUrl;
+  String receivedEventsUrl;
+  Type type;
+  Visibility userViewType;
+  bool siteAdmin;
 
-    Owner({
-        required this.login,
-        required this.id,
-        required this.nodeId,
-        required this.avatarUrl,
-        required this.gravatarId,
-        required this.url,
-        required this.htmlUrl,
-        required this.followersUrl,
-        required this.followingUrl,
-        required this.gistsUrl,
-        required this.starredUrl,
-        required this.subscriptionsUrl,
-        required this.organizationsUrl,
-        required this.reposUrl,
-        required this.eventsUrl,
-        required this.receivedEventsUrl,
-        required this.type,
-        required this.userViewType,
-        required this.siteAdmin,
-    });
+  Owner({
+    required this.login,
+    required this.id,
+    required this.nodeId,
+    required this.avatarUrl,
+    required this.gravatarId,
+    required this.url,
+    required this.htmlUrl,
+    required this.followersUrl,
+    required this.followingUrl,
+    required this.gistsUrl,
+    required this.starredUrl,
+    required this.subscriptionsUrl,
+    required this.organizationsUrl,
+    required this.reposUrl,
+    required this.eventsUrl,
+    required this.receivedEventsUrl,
+    required this.type,
+    required this.userViewType,
+    required this.siteAdmin,
+  });
 
-    factory Owner.fromRawJson(String str) => Owner.fromJson(json.decode(str));
+  factory Owner.fromRawJson(String str) => Owner.fromJson(json.decode(str));
 
-    String toRawJson() => json.encode(toJson());
+  String toRawJson() => json.encode(toJson());
 
-    factory Owner.fromJson(Map<String, dynamic> json) => Owner(
-        login: loginValues.map[json["login"]]!,
+  factory Owner.fromJson(Map<String, dynamic> json) => Owner(
+        login: loginValues.map[json["login"]],
         id: json["id"],
-        nodeId: nodeIdValues.map[json["node_id"]]!,
+        nodeId: nodeIdValues.map[json["node_id"]],
         avatarUrl: json["avatar_url"],
         gravatarId: json["gravatar_id"],
         url: json["url"],
         htmlUrl: json["html_url"],
         followersUrl: json["followers_url"],
         followingUrl: json["following_url"],
-        gistsUrl: gistsUrlValues.map[json["gists_url"]]!,
+        gistsUrl: gistsUrlValues.map[json["gists_url"]],
         starredUrl: json["starred_url"],
         subscriptionsUrl: json["subscriptions_url"],
         organizationsUrl: json["organizations_url"],
         reposUrl: json["repos_url"],
-        eventsUrl: eventsUrlValues.map[json["events_url"]]!,
+        eventsUrl: eventsUrlValues.map[json["events_url"]],
         receivedEventsUrl: json["received_events_url"],
         type: typeValues.map[json["type"]]!,
         userViewType: visibilityValues.map[json["user_view_type"]]!,
         siteAdmin: json["site_admin"],
-    );
+      );
 
-    Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         "login": loginValues.reverse[login],
         "id": id,
         "node_id": nodeIdValues.reverse[nodeId],
@@ -443,65 +432,47 @@ class Owner {
         "type": typeValues.reverse[type],
         "user_view_type": visibilityValues.reverse[userViewType],
         "site_admin": siteAdmin,
-    };
+      };
 }
 
-enum EventsUrl {
-    HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_EVENTS_PRIVACY
-}
+enum EventsUrl { HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_EVENTS_PRIVACY }
 
 final eventsUrlValues = EnumValues({
-    "https://api.github.com/users/kunal-gangani/events{/privacy}": EventsUrl.HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_EVENTS_PRIVACY
+  "https://api.github.com/users/kunal-gangani/events{/privacy}":
+      EventsUrl.HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_EVENTS_PRIVACY
 });
 
-enum GistsUrl {
-    HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_GISTS_GIST_ID
-}
+enum GistsUrl { HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_GISTS_GIST_ID }
 
 final gistsUrlValues = EnumValues({
-    "https://api.github.com/users/kunal-gangani/gists{/gist_id}": GistsUrl.HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_GISTS_GIST_ID
+  "https://api.github.com/users/kunal-gangani/gists{/gist_id}":
+      GistsUrl.HTTPS_API_GITHUB_COM_USERS_KUNAL_GANGANI_GISTS_GIST_ID
 });
 
-enum Login {
-    KUNAL_GANGANI
-}
+enum Login { KUNAL_GANGANI }
 
-final loginValues = EnumValues({
-    "kunal-gangani": Login.KUNAL_GANGANI
-});
+final loginValues = EnumValues({"kunal-gangani": Login.KUNAL_GANGANI});
 
-enum NodeId {
-    U_KG_DOCP_SL_XG
-}
+enum NodeId { U_KG_DOCP_SL_XG }
 
-final nodeIdValues = EnumValues({
-    "U_kgDOCPSlXg": NodeId.U_KG_DOCP_SL_XG
-});
+final nodeIdValues = EnumValues({"U_kgDOCPSlXg": NodeId.U_KG_DOCP_SL_XG});
 
-enum Type {
-    USER
-}
+enum Type { USER }
 
-final typeValues = EnumValues({
-    "User": Type.USER
-});
+final typeValues = EnumValues({"User": Type.USER});
 
-enum Visibility {
-    PUBLIC
-}
+enum Visibility { PUBLIC }
 
-final visibilityValues = EnumValues({
-    "public": Visibility.PUBLIC
-});
+final visibilityValues = EnumValues({"public": Visibility.PUBLIC});
 
 class EnumValues<T> {
-    Map<String, T> map;
-    late Map<T, String> reverseMap;
+  Map<String, T> map;
+  late Map<T, String> reverseMap;
 
-    EnumValues(this.map);
+  EnumValues(this.map);
 
-    Map<T, String> get reverse {
-            reverseMap = map.map((k, v) => MapEntry(v, k));
-            return reverseMap;
-    }
+  Map<T, String> get reverse {
+    reverseMap = map.map((k, v) => MapEntry(v, k));
+    return reverseMap;
+  }
 }

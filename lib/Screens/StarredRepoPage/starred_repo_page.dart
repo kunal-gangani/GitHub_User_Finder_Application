@@ -2,7 +2,6 @@ import 'package:country_display_application/Controllers/github_controller.dart';
 import 'package:flexify/flexify.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StarredRepoPage extends StatelessWidget {
@@ -10,8 +9,6 @@ class StarredRepoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final githubController = Provider.of<GitHubController>(context);
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -31,54 +28,71 @@ class StarredRepoPage extends StatelessWidget {
           "Your Favourite Repositories",
           style: TextStyle(
             color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: githubController.starredList.isNotEmpty
-            ? ListView.builder(
-                itemCount: githubController.starredList.length,
-                itemBuilder: (context, index) {
-                  final repoName = githubController.starredList[index];
-                  return Card(
-                    color: Colors.grey[850],
-                    child: ListTile(
-                      title: Text(
-                        repoName,
-                        style: const TextStyle(
-                          color: Colors.white,
+      body: Consumer<GitHubController>(
+        builder: (context, githubController, child) {
+          final starredList = githubController.starredList;
+
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: starredList.isNotEmpty
+                ? ListView.builder(
+                    itemCount: starredList.length,
+                    itemBuilder: (context, index) {
+                      final repoName = starredList[index];
+                      return Card(
+                        color: Colors.grey[850],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12.r),
                         ),
-                      ),
-                      trailing: IconButton(
-                        icon: const Icon(
-                          Icons.delete,
-                          color: Colors.red,
-                        ),
-                        onPressed: () {
-                          githubController.removeFromStarred(repoName);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                "$repoName removed from Starred",
-                              ),
+                        child: ListTile(
+                          title: Text(
+                            repoName,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
                             ),
-                          );
-                        },
+                          ),
+                          trailing: IconButton(
+                            icon: const Icon(
+                              Icons.delete,
+                              color: Colors.red,
+                            ),
+                            onPressed: () {
+                              githubController.removeFromStarred(repoName);
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text(
+                                    "$repoName removed from Starred",
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  backgroundColor: Colors.grey[800],
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      );
+                    },
+                  )
+                : Center(
+                    child: Text(
+                      "No Starred Repositories Added",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
-                  );
-                },
-              )
-            : Center(
-                child: Text(
-                  "No Starred Repositories Added",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp,
                   ),
-                ),
-              ),
+          );
+        },
       ),
     );
   }

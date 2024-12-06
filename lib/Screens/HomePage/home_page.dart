@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                                 onTap: () {
                                   Flexify.go(
                                     DetailsPage(
-                                      allData: const [],
+                                      allData: null,
                                       user: user,
                                     ),
                                     animation: FlexifyRouteAnimations.blur,
@@ -228,7 +228,7 @@ class _HomePageState extends State<HomePage> {
                               return GestureDetector(
                                 onTap: () {
                                   Flexify.go(
-                                    DetailsPage(allData: users),
+                                    DetailsPage(allData: users[index]),
                                     animation: FlexifyRouteAnimations.blur,
                                     animationDuration: Durations.medium1,
                                   );
