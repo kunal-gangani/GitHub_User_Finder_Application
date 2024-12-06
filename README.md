@@ -17,7 +17,20 @@ A Flutter application that allows users to search for GitHub profiles, view deta
 - **Starred List**:
   - Persistently store and manage your starred repositories using **Shared Preferences**.
   - Access your starred repositories across app sessions.
-  
+ 
+---
+
+## 📱 Outputs
+### ScreenShots
+<img src = "https://github.com/user-attachments/assets/112301ad-12d7-4d8d-814f-09453b3ed50c" height = "400em">
+<img src = "https://github.com/user-attachments/assets/73b466f6-7ac9-4b07-b05c-61a31d4b3a3e" height = "400em">
+<img src = "https://github.com/user-attachments/assets/4369cefd-e243-42cd-b7c0-6b49eff9a8c2" height = "400em">
+<img src = "https://github.com/user-attachments/assets/dfca013b-5c55-49cc-9e70-fcff2f865741" height = "400em">
+<img src = "https://github.com/user-attachments/assets/14341213-e308-460f-b515-6356618266c8" height = "400em">
+
+### Video Output
+https://github.com/user-attachments/assets/87d64390-e56b-4916-b149-281548001471
+
 ---
 
 ## 🛠️ Technologies Used
